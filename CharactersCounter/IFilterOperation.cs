@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CharactersCounter
 {
-    public interface IOperation
+    public interface IFilterOperation
     {
-        char operationType { get; }
-        string ChooseOperation(string input);
+        string Filter( string input);
     }
 }

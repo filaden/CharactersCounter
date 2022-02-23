@@ -6,30 +6,25 @@ using System.Threading.Tasks;
 
 namespace CharactersCounter
 {
-    internal class CountingOperation : IOperation
+    public class CountingOperation : ICountingOperation
     {
-        public char operationType { get; } = 'a';
-        
-        public string ChooseOperation(string input)
+        public string Counting(string input)
         {
-            char[] enteredCharString = input.ToCharArray();
-            char ch;
-            int count;
-            for (ch = (char)97; ch <= 122; ch++)
+            string enteredString = input.Replace(" ", string.Empty);
+           
+            while (enteredString.Length > 0)
             {
-                count = 0;
-
-                for (int i = 0; i < enteredCharString.Length; i++)
+                Console.Write(enteredString[0] + "");
+                int count = 0;
+                for(int j = 0; j < enteredString.Length; j++)
                 {
-                    if (ch == enteredCharString[i] || (ch + 32) == enteredCharString[i])
+                    if(enteredString[0] == enteredString[j])
                     {
                         count++;
                     }
                 }
-                if (count > 0)
-                {
-                    Console.Write(ch + "" + count);
-                }
+                Console.Write(count);
+                enteredString = enteredString.Replace(enteredString[0].ToString(), string.Empty);
             }
             return input;
         }

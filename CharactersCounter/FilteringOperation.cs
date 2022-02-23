@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace CharactersCounter
 {
-    public class FilteringOperation : IOperation
-    {
-       
-        public char operationType { get ;}  = 'b';
+    public class FilteringOperation : IFilterOperation
+    { 
 
-        public string ChooseOperation(string input)
+        public string Filter( string input)
         {
-            string enteredString = input;
-            char[] enteredCharString = input.ToCharArray();
+            string enteredString = input; ;
+           
+            char[] enteredCharString = enteredString.ToCharArray();
             string result = string.Empty;
 
             for (int i = 0; i < enteredString.Length; i++)
@@ -25,7 +24,8 @@ namespace CharactersCounter
                 }
 
             }
-            return result;
+            Console.WriteLine(result);
+            return input;
         }
     }
 }

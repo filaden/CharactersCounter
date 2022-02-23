@@ -8,25 +8,23 @@ namespace CharactersCounter
 {
     public class Operation
     {
-        
-        public static char EnterOperation()
+        public  string OperationToChoose (string input, string operationToChose)
         {
-            Console.WriteLine("enter a or b for operation");
-            char operationToChose = char.Parse(Console.ReadLine());
-            return operationToChose;
-        }
-        public static void  Message()
-        {
-            Console.WriteLine("Invalid input entered a or b");
-        }
-        private IOperation _operation;
-        public Operation(IOperation operation)
-        {
-            _operation = operation;
-        }
-        public void SetOperation(IOperation operation)
-        {
-            _operation = operation;
+            IFilterOperation filter = new FilteringOperation();
+            ICountingOperation counting = new CountingOperation();
+
+            if (operationToChose == "a")
+            {
+                return counting.Counting(input);
+            }
+            else if (operationToChose == "b")
+            {
+                return filter.Filter(input);
+            }
+            else
+            {
+                return "Invalid input entered a or b";
+            }
         }
     }
 }

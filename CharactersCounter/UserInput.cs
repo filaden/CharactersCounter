@@ -14,5 +14,11 @@ namespace CharactersCounter
             string enteredString = Console.ReadLine();
             return enteredString;
         }
+        public static string EnterOperation()
+        {
+            Console.WriteLine("Enter a for Counting or b for Filtering  operation");
+            string operationToChose = Console.ReadLine();
+            return operationToChose;
+        }
     }
 }
