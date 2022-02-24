@@ -14,17 +14,18 @@ namespace Palindrome
            
             while(input.Length > 0)
             {
-                Console.Write(input[0] + "");
+                char  letterForCheck = input[0];
+                Console.Write(letterForCheck + "");
                 int count = 0;
                 for(int j = 0; j < input.Length; j++)
                 {
-                    if(input[0] == input[j])
+                    if(letterForCheck == input[j])
                     {
                         count++;
                     }
                 }
                 Console.Write(count);
-                input = input.Replace(input[0].ToString(), string.Empty);
+                input = input.Replace(letterForCheck.ToString(),string.Empty);
             }
         }
     }
