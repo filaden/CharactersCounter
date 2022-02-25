@@ -10,21 +10,22 @@ namespace CharactersCounter
     {
         public string Counting(string input)
         {
-            string enteredString = input.Replace(" ", string.Empty);
-           
-            while (enteredString.Length > 0)
+            input = input.Replace(" ", string.Empty);
+
+            while (input.Length > 0)
             {
-                Console.Write(enteredString[0] + "");
+                char letterForCheck = input[0];
+                Console.Write(letterForCheck + "");
                 int count = 0;
-                for(int j = 0; j < enteredString.Length; j++)
+                for (int j = 0; j < input.Length; j++)
                 {
-                    if(enteredString[0] == enteredString[j])
+                    if (letterForCheck == input[j])
                     {
                         count++;
                     }
                 }
                 Console.Write(count);
-                enteredString = enteredString.Replace(enteredString[0].ToString(), string.Empty);
+                input = input.Replace(letterForCheck.ToString(), string.Empty);
             }
             return input;
         }
